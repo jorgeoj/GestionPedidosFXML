@@ -1,4 +1,6 @@
-package com.example.gestiondepedidos.usuario;
+package com.example.gestiondepedidos.domain;
+
+import com.example.gestiondepedidos.user.Usuario;
 
 import java.util.ArrayList;
 

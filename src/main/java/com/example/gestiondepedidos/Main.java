@@ -8,11 +8,15 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Main extends Application {
+    //Representa la ventana ppal de la app
+    private static Stage myStage;
     @Override
     public void start(Stage stage) throws IOException {
+        myStage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("ventana-login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 260, 325);
-        stage.setTitle("Aplicación de gestión de pedidos");
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        stage.setResizable(false);
+        stage.setTitle("Gestión de pedidos");
         stage.setScene(scene);
         stage.show();
     }

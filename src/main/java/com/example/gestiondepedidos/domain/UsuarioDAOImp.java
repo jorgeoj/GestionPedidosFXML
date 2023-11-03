@@ -1,11 +1,14 @@
-package com.example.gestiondepedidos.usuario;
+package com.example.gestiondepedidos.domain;
+
+import com.example.gestiondepedidos.domain.UsuarioDAO;
+import com.example.gestiondepedidos.user.Usuario;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.sql.Connection;
 
 
-public class UsuarioDAOImp implements UsuarioDAO{
+public class UsuarioDAOImp implements UsuarioDAO {
 
     private final Connection connection;
 
@@ -25,7 +28,7 @@ public class UsuarioDAOImp implements UsuarioDAO{
             pst.setLong(1,id);
             var rs = pst.executeQuery();
             if (rs.next()){
-                salida = new Usuario(rs.getLong("id"),
+                salida = new Usuario(rs.getInt("id"),
                         rs.getString("nombre"),
                         rs.getString("contraseña"),
                         rs.getString("email"));
