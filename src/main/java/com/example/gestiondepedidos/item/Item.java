@@ -1,4 +1,4 @@
-package com.example.gestiondepedidos.orders;
+package com.example.gestiondepedidos.item;
 
 import com.example.gestiondepedidos.products.Producto;
 

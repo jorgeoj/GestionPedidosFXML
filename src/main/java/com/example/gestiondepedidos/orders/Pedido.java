@@ -1,5 +1,7 @@
 package com.example.gestiondepedidos.orders;
 
+import com.example.gestiondepedidos.item.Item;
+
 import java.util.ArrayList;
 
 public class Pedido {
