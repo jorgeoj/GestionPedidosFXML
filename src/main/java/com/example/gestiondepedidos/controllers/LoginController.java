@@ -38,7 +38,7 @@ public class LoginController implements Serializable {
         try{
             Usuario usuario= usuarioDAOImp.loadUser(user, password);
             Sesion.setUsuario(usuario);
-            Main.loadFXMLUsuario("ventanaUsuario.fxml");
+            Main.loadFXMLUsuario("ventana-usuario.fxml");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

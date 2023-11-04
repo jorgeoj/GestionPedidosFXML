@@ -46,7 +46,7 @@ public class Main extends Application {
     public static void loadFXMLLogin(String ruta) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(ruta));
-            Scene scene = new Scene((Parent)fxmlLoader.load(), 600, 430);
+            Scene scene = new Scene((Parent)fxmlLoader.load(), 700, 500);
             myStage.setScene(scene);
         } catch (IOException var3) {
             throw new RuntimeException(var3);
