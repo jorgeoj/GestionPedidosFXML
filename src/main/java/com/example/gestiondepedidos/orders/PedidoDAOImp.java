@@ -24,7 +24,7 @@ public class PedidoDAOImp implements PedidoDAO{
         ArrayList<Pedido> salida = new ArrayList();
 
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("select * from pedido where usuario = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement(queryLoadAll);
             ItemDAOImp itemDAOImp = new ItemDAOImp(DBConnection.getConnection());
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();

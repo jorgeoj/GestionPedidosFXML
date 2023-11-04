@@ -22,7 +22,7 @@ public class ItemDAOImp implements ItemDAO{
         ArrayList<Item> salida = new ArrayList();
 
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("select * from item where codigo_pedido = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement(queryLoadAll);
             preparedStatement.setString(1, codigo_Pedido);
             ResultSet resultSet = preparedStatement.executeQuery();
 

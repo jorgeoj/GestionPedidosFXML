@@ -4,22 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf0569cf-10cd-40c9-af4d-0738dda37244" name="Changes" comment="commit prueba">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/Sesion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/controllers/VentanaUsuarioController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestiondepedidos/ventana-usuario.fxml" afterDir="false" />
+    <list default="true" id="bf0569cf-10cd-40c9-af4d-0738dda37244" name="Changes" comment="Creada clase Sesion, cambios en Usuario, Pedido, Producto e Item (lombo)">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/carrito.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/personaInicioSesion.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/domain/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/domain/DBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/item/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/item/ItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/item/ItemDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/item/ItemDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/item/ItemDAOImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/orders/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/orders/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/orders/PedidoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/orders/PedidoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/orders/PedidoDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/orders/PedidoDAOImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/products/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/products/Producto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/user/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/user/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/products/ProductoDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/products/ProductoDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/user/UsuarioDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/user/UsuarioDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestiondepedidos/ventana-login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestiondepedidos/ventana-login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestiondepedidos/ventana-usuario.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestiondepedidos/ventana-usuario.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +70,7 @@
       <recent name="com.example.gestiondepedidos.user" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jorge\IdeaProjects\GestionDePedidos\src\main\resources\images" />
       <recent name="C:\Users\jorge\IdeaProjects\GestionDePedidos\src\main\resources\com\example\gestiondepedidos" />
     </key>
   </component>
@@ -102,7 +99,7 @@
       <workItem from="1698766995848" duration="8671000" />
       <workItem from="1698948064398" duration="407000" />
       <workItem from="1699029950467" duration="11698000" />
-      <workItem from="1699079858805" duration="5794000" />
+      <workItem from="1699079858805" duration="10332000" />
     </task>
     <task id="LOCAL-00001" summary="Empezamos a crear la clase usuario&#10;y se hace el fxml del login">
       <option name="closed" value="true" />
@@ -152,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699080874422</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Creada clase Sesion, cambios en Usuario, Pedido, Producto e Item (lombo)">
+      <option name="closed" value="true" />
+      <created>1699086206091</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1699086206091</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,7 +181,8 @@
     <MESSAGE value="commit fallo" />
     <MESSAGE value="primer commit" />
     <MESSAGE value="commit prueba" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit prueba" />
+    <MESSAGE value="Creada clase Sesion, cambios en Usuario, Pedido, Producto e Item (lombo)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creada clase Sesion, cambios en Usuario, Pedido, Producto e Item (lombo)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

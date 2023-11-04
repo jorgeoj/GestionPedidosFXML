@@ -19,20 +19,20 @@ import java.util.ResourceBundle;
 public class LoginController implements Serializable {
 
     @FXML
-    private TextField txtUsuario;
+    private TextField txtUser;
     @FXML
-    private PasswordField pswdField;
+    private PasswordField txtPassword;
     @FXML
-    private Button buttonEntrar;
+    private Button btnIniciar;
     @FXML
-    private Label txtInfo;
+    private Label info;
 
     public LoginController(){}
 
-    @FXML
+    @Deprecated
     public void login(ActionEvent actionEvent){
-        String user = txtUsuario.getText();
-        String password = pswdField.getText();
+        String user = txtUser.getText();
+        String password = txtPassword.getText();
         UsuarioDAOImp usuarioDAOImp = new UsuarioDAOImp(DBConnection.getConnection());
         //Coger usuario y contraseña y comprobarlos para pasar o no
         try{

@@ -15,30 +15,35 @@ public class UsuarioDAOImp implements UsuarioDAO {
     //private final static String loadUserByName = "SELECT * FROM usuario WHERE nombre = ?";
     private final static String loadUserByEmail = "SELECT * FROM usuario WHERE email = ?";
 
-    public UsuarioDAOImp(Connection connection) {
-        this.connection = connection;
+    public UsuarioDAOImp(Connection conn) {
+        this.connection = conn;
     }
 
 
     @Override
     public Usuario loadUser(String email, String contrasenya) {
-        Usuario usuario = null;
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(loadUserByEmail);
             preparedStatement.setString(1, email);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()){
-                //TODO necesito la linea de abajo? y como arreglarla si la necesito
-                //usuario = new Usuario(email, contrasenya);
+                //TODO mirar lo del usuario por si acaso
+                Usuario usuario = new Usuario();
                 usuario.setId(resultSet.getInt("id"));
                 usuario.setNombre(resultSet.getString("nombre"));
                 usuario.setContrasenya(resultSet.getString("contrasenya"));
+                if (!contrasenya.equals(usuario.getContrasenya())){
+                    throw new Exception("Contraseña incorrecta");
+                }else {
+                    return usuario;
+                }
+            }else {
+                throw new RuntimeException("Usuario incorrecto");
             }
 
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return usuario;
     }
 }

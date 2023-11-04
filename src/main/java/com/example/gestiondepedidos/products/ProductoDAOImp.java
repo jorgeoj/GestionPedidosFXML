@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class ProductoDAOImp implements ProductoDAO{
 
     private static Connection connection;
-    private static String queryLoad = "select * from producto where id=?";
+    private static String queryLoadAll = "select * from producto where id=?";
 
     public ProductoDAOImp(Connection conn) {
         connection = conn;
@@ -18,7 +18,7 @@ public class ProductoDAOImp implements ProductoDAO{
         Producto producto = null;
         try {
             //Se prepara y ejecuta la consulta.
-            PreparedStatement preparedStatement = connection.prepareStatement(queryLoad);
+            PreparedStatement preparedStatement = connection.prepareStatement(queryLoadAll);
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -29,9 +29,10 @@ public class ProductoDAOImp implements ProductoDAO{
                 producto.setPrecio(resultSet.getDouble("precio"));
                 producto.setCantidad_disponible(resultSet.getInt("cantidad_disponible"));
             }
+
+            return producto;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return producto;
     }
 }
