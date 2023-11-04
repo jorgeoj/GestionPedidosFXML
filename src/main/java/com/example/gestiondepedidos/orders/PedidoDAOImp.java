@@ -1,6 +1,14 @@
 package com.example.gestiondepedidos.orders;
 
+import com.example.gestiondepedidos.Sesion;
+import com.example.gestiondepedidos.domain.DBConnection;
+import com.example.gestiondepedidos.item.ItemDAOImp;
+
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class PedidoDAOImp implements PedidoDAO{
@@ -12,9 +20,30 @@ public class PedidoDAOImp implements PedidoDAO{
         this.connection = conn;
     }
 
-    //TODO aun hay que hacer esto de aqui
-    @Override
     public ArrayList<Pedido> loadAll(Integer id) {
-        return null;
+        ArrayList<Pedido> salida = new ArrayList();
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from pedido where usuario = ?");
+            ItemDAOImp itemDAOImp = new ItemDAOImp(DBConnection.getConnection());
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()) {
+                Pedido pedido = new Pedido();
+                pedido.setId(resultSet.getInt("id"));
+                pedido.setCodigo(resultSet.getString("codigo"));
+                pedido.setFecha((new SimpleDateFormat("yyyy-MM-dd")).format(resultSet.getDate("fecha")));
+                pedido.setUsuarioId(resultSet.getInt("usuario"));
+                pedido.setTotal(resultSet.getInt("total"));
+                pedido.setItems(itemDAOImp.loadAll(pedido.getCodigo()));
+                Sesion.setPedido(pedido);
+                salida.add(pedido);
+            }
+
+            return salida;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

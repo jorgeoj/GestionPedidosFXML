@@ -8,15 +8,17 @@ import java.util.logging.Logger;
 
 public class DBConnection {
     private static Connection connection;
-    private static Logger logger;
+    private static Logger logger = Logger.getLogger(DBConnection.class.getName());
+
+    public DBConnection(){}
 
     static {
-        logger = Logger.getLogger(DBConnection.class.getName());
-
         String url;
         String user;
         String password;
+
         Properties properties = new Properties();
+
         try{
             //Cargar la configuracion de la bd
             InputStream inputStream = DBConnection.class.getClassLoader().getResourceAsStream("bbdd.properties");
@@ -36,7 +38,5 @@ public class DBConnection {
         }
     }
 
-    public static Connection getConnection(){
-        return connection;
-    }
+    public static Connection getConnection(){return connection;}
 }
