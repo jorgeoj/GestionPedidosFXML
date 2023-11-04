@@ -26,7 +26,7 @@ public class Main extends Application {
     public static void loadFXMLUsuario(String s) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(s));
-            Scene scene = new Scene((Parent) fxmlLoader.load(), 800, 650);
+            Scene scene = new Scene((Parent) fxmlLoader.load(), 850, 600);
             myStage.setScene(scene);
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -36,7 +36,7 @@ public class Main extends Application {
     public static void loadFXMLDetalles(String ruta) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(ruta));
-            Scene scene = new Scene((Parent)fxmlLoader.load(), 600, 430);
+            Scene scene = new Scene((Parent)fxmlLoader.load(), 600, 400);
             myStage.setScene(scene);
         } catch (IOException var3) {
             throw new RuntimeException(var3);

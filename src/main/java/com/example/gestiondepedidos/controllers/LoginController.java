@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 
 import java.io.Serializable;
 import java.net.URL;
@@ -29,8 +30,10 @@ public class LoginController implements Serializable {
 
     public LoginController(){}
 
-    @Deprecated
-    public void login(ActionEvent actionEvent){
+    public void initialize(URL url, ResourceBundle resourceBundle){}
+
+    @FXML
+    public void login(ActionEvent actionEvent) {
         String user = txtUser.getText();
         String password = txtPassword.getText();
         UsuarioDAOImp usuarioDAOImp = new UsuarioDAOImp(DBConnection.getConnection());
@@ -40,9 +43,9 @@ public class LoginController implements Serializable {
             Sesion.setUsuario(usuario);
             Main.loadFXMLUsuario("ventana-usuario.fxml");
         } catch (Exception e) {
+            info.setText("Datos incorrectos, vuelva a introducirlos");
+            info.setTextFill(Color.RED);
             throw new RuntimeException(e);
         }
     }
-
-    public void initialize(URL url, ResourceBundle resourceBundle){}
 }
