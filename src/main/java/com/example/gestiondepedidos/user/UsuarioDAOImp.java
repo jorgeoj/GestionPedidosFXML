@@ -28,7 +28,6 @@ public class UsuarioDAOImp implements UsuarioDAO {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()){
-                //TODO mirar lo del usuario por si acaso
                 Usuario usuario = new Usuario();
                 usuario.setId(resultSet.getInt("id"));
                 usuario.setNombre(resultSet.getString("nombre"));

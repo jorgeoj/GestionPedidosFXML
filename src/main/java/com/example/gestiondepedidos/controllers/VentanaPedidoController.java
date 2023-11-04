@@ -35,7 +35,7 @@ public class VentanaPedidoController implements Initializable {
 
     private ObservableList<Item> observableListItem;
 
-    private VentanaPedidoController(){}
+    public VentanaPedidoController(){}
 
     public void initialize(URL url, ResourceBundle resourceBundle){
         this.colId.setCellValueFactory((fila) ->{
@@ -51,7 +51,7 @@ public class VentanaPedidoController implements Initializable {
             return new SimpleStringProperty(cCantidad);
         });
         this.colProducto.setCellValueFactory((fila) -> {
-            String cProducto = String.valueOf(fila.getValue().getProducto_id());
+            String cProducto = String.valueOf(fila.getValue().getProducto_id().getNombre());
             return new SimpleStringProperty(cProducto);
         });
 

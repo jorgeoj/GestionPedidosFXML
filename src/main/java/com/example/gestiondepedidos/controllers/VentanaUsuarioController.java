@@ -70,7 +70,7 @@ public class VentanaUsuarioController implements Initializable {
         this.pedidosObservable.addAll(Sesion.getPedidos());
         this.tvPedidos.setItems(this.pedidosObservable);
         this.tvPedidos.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) ->{
-           this.seleccionarPedido((Pedido)this.tvPedidos.getSelectionModel().getSelectedItem());
+           this.seleccionarPedido(this.tvPedidos.getSelectionModel().getSelectedItem());
         });
     }
 
