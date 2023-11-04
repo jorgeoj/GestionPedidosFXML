@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf0569cf-10cd-40c9-af4d-0738dda37244" name="Changes" comment="commit fallo">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/item/ItemDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/item/ItemDAOImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/orders/PedidoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/orders/PedidoDAOImp.java" afterDir="false" />
+    <list default="true" id="bf0569cf-10cd-40c9-af4d-0738dda37244" name="Changes" comment="primer commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/item/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/orders/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/orders/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/products/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/products/Producto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/user/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestiondepedidos/user/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +47,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -88,6 +81,7 @@
       <workItem from="1698766995848" duration="8671000" />
       <workItem from="1698948064398" duration="407000" />
       <workItem from="1699029950467" duration="11698000" />
+      <workItem from="1699079858805" duration="761000" />
     </task>
     <task id="LOCAL-00001" summary="Empezamos a crear la clase usuario&#10;y se hace el fxml del login">
       <option name="closed" value="true" />
@@ -121,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699037755433</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="primer commit">
+      <option name="closed" value="true" />
+      <created>1699080037524</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699080037524</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +145,7 @@
     <MESSAGE value="Ordenar por paquetes y creacion clases pedido e item" />
     <MESSAGE value="Terminado conector a la base de datos y hechos los daos de producto" />
     <MESSAGE value="commit fallo" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit fallo" />
+    <MESSAGE value="primer commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="primer commit" />
   </component>
 </project>
