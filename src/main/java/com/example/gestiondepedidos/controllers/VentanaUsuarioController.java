@@ -19,6 +19,10 @@ import javafx.scene.control.TableView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controlador de la ventana de usuario en la aplicación de gestión de pedidos.
+ * Esta clase gestiona la interfaz de usuario para mostrar los pedidos del usuario y permite al usuario cerrar sesión.
+ */
 public class VentanaUsuarioController implements Initializable {
     @javafx.fxml.FXML
     private Button btnCerrarSesion;
@@ -39,7 +43,17 @@ public class VentanaUsuarioController implements Initializable {
 
     private ObservableList<Pedido> pedidosObservable;
 
+    /**
+     * Constructor de la clase VentanaUsuarioController.
+     */
     public VentanaUsuarioController(){}
+
+    /**
+     * Inicializa la interfaz de usuario y carga los pedidos del usuario actual.
+     *
+     * @param url             Ubicación relativa del archivo FXML.
+     * @param resourceBundle  Recursos utilizados para la inicialización.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.colIdPedido.setCellValueFactory((fila)->{
@@ -74,13 +88,19 @@ public class VentanaUsuarioController implements Initializable {
         });
     }
 
+    /**
+     * Maneja la selección de un pedido en la tabla y carga los detalles del pedido seleccionado.
+     *
+     * @param pedido Pedido seleccionado.
+     */
     private void seleccionarPedido(Pedido pedido) {
         Sesion.setPedido(pedido);
         Sesion.setPos(this.tvPedidos.getSelectionModel().getSelectedIndex());
         Main.loadFXMLDetalles("ventana-pedido.fxml");
     }
 
-    public void logout(ActionEvent actionEvent){
+    @javafx.fxml.FXML
+    public void logout(ActionEvent actionEvent) {
         Sesion.setUsuario(null);
         Main.loadFXMLLogin("ventana-login.fxml");
     }

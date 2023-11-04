@@ -17,6 +17,10 @@ import javafx.scene.control.TableView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controlador de la ventana de detalles de pedido en la aplicación de gestión de pedidos.
+ * Esta clase gestiona la interfaz de usuario para mostrar los detalles de un pedido y permite al usuario cerrar sesión o volver atrás.
+ */
 public class VentanaPedidoController implements Initializable {
     @javafx.fxml.FXML
     private Button btnCerrarSesion;
@@ -35,8 +39,17 @@ public class VentanaPedidoController implements Initializable {
 
     private ObservableList<Item> observableListItem;
 
+    /**
+     * Constructor de la clase VentanaPedidoController.
+     */
     public VentanaPedidoController(){}
 
+    /**
+     * Inicializa la interfaz de usuario y carga los detalles del pedido seleccionado.
+     *
+     * @param url             Ubicación relativa del archivo FXML.
+     * @param resourceBundle  Recursos utilizados para la inicialización.
+     */
     public void initialize(URL url, ResourceBundle resourceBundle){
         this.colId.setCellValueFactory((fila) ->{
             String id = String.valueOf(fila.getValue().getId());

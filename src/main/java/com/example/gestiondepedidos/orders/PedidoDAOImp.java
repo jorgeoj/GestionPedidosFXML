@@ -11,15 +11,36 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-public class PedidoDAOImp implements PedidoDAO{
-
+/**
+ * Implementación de la interfaz PedidoDAO para acceder y gestionar datos de pedidos en una base de datos.
+ */
+public class PedidoDAOImp implements PedidoDAO {
+    /**
+     * Conexión a la base de datos utilizada para acceder a los datos de pedidos.
+     */
     private static Connection connection;
-    private final static String queryLoadAll = "select * from pedido where usuario = ?";
 
+    /**
+     * Consulta SQL para cargar todos los pedidos de un usuario por su identificador.
+     */
+    private final static String queryLoadAll = "SELECT * FROM pedido WHERE usuario = ?";
+
+    /**
+     * Constructor de la clase PedidoDAOImp.
+     *
+     * @param conn Conexión a la base de datos que se utilizará para acceder a los datos de pedidos.
+     */
     public PedidoDAOImp(Connection conn) {
         this.connection = conn;
     }
 
+    /**
+     * Carga todos los pedidos asociados con un usuario específico desde la base de datos.
+     *
+     * @param id Identificador del usuario para el cual se cargarán los pedidos.
+     * @return Una lista de objetos Pedido que representan los pedidos del usuario.
+     * @throws RuntimeException Si se produce un error durante la carga de los pedidos desde la base de datos.
+     */
     public ArrayList<Pedido> loadAll(Integer id) {
         ArrayList<Pedido> salida = new ArrayList();
 
@@ -29,7 +50,7 @@ public class PedidoDAOImp implements PedidoDAO{
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            while(resultSet.next()) {
+            while (resultSet.next()) {
                 Pedido pedido = new Pedido();
                 pedido.setId(resultSet.getInt("id"));
                 pedido.setCodigo(resultSet.getString("codigo"));
@@ -47,3 +68,4 @@ public class PedidoDAOImp implements PedidoDAO{
         }
     }
 }
+

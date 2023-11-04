@@ -17,6 +17,10 @@ import java.io.Serializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controlador de la ventana de inicio de sesión en la aplicación de gestión de pedidos.
+ * Esta clase gestiona la interfaz de usuario para permitir a los usuarios iniciar sesión y acceder a la aplicación.
+ */
 public class LoginController implements Serializable {
 
     @FXML
@@ -28,10 +32,24 @@ public class LoginController implements Serializable {
     @FXML
     private Label info;
 
+    /**
+     * Constructor de la clase LoginController.
+     */
     public LoginController(){}
 
+    /**
+     * Inicializa la interfaz de usuario de inicio de sesión.
+     *
+     * @param url             Ubicación relativa del archivo FXML.
+     * @param resourceBundle  Recursos utilizados para la inicialización.
+     */
     public void initialize(URL url, ResourceBundle resourceBundle){}
 
+    /**
+     * Maneja el proceso de inicio de sesión cuando el usuario presiona el botón "Iniciar sesión".
+     *
+     * @param actionEvent Evento de acción que desencadena el inicio de sesión.
+     */
     @FXML
     public void login(ActionEvent actionEvent) {
         String user = txtUser.getText();
