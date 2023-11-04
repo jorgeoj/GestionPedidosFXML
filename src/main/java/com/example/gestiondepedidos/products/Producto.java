@@ -1,6 +1,8 @@
 package com.example.gestiondepedidos.products;
 
-public class Producto {
+import java.io.Serializable;
+
+public class Producto implements Serializable {
     private Integer id;
     private String nombre;
     private Double precio;

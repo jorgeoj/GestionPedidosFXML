@@ -2,9 +2,10 @@ package com.example.gestiondepedidos.orders;
 
 import com.example.gestiondepedidos.item.Item;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Pedido {
+public class Pedido implements Serializable {
     private Integer id;
     private String codigo;
     private String fecha;

@@ -2,17 +2,19 @@ package com.example.gestiondepedidos.item;
 
 import com.example.gestiondepedidos.products.Producto;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable {
     private Integer id;
     private String codigo_pedido;
-    private Producto producto;
+    private Producto producto_id;
     private Integer cantidad;
 
     //Constructores con y sin parametros
     public Item(Integer id, String codigo_pedido, Producto producto, Integer cantidad) {
         this.id = id;
         this.codigo_pedido = codigo_pedido;
-        this.producto = producto;
+        this.producto_id = producto;
         this.cantidad = cantidad;
     }
 
@@ -37,11 +39,11 @@ public class Item {
     }
 
     public Producto getProducto() {
-        return producto;
+        return producto_id;
     }
 
     public void setProducto(Producto producto) {
-        this.producto = producto;
+        this.producto_id = producto;
     }
 
     public Integer getCantidad() {
@@ -59,7 +61,7 @@ public class Item {
         return "Item{" +
                 "id=" + id +
                 ", codigo_pedido='" + codigo_pedido + '\'' +
-                ", producto=" + producto +
+                ", producto=" + producto_id +
                 ", cantidad=" + cantidad +
                 '}';
     }
